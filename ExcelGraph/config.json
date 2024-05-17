@@ -1,0 +1,7 @@
+{
+    "watchdogfolder":"../Watchdog",
+    "absent_out_file":"absent_output_file.csv",
+    "retard_out_file":"retard_output_file.csv",
+    "cleansed_out_file":"cleansed_output_file.csv"
+
+}
