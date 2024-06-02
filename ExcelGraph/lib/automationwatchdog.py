@@ -2,10 +2,10 @@ import time
 import os
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-from automation import *
+from lib.automation import *
 #from chartsengine import generate_excel_chart
-from chartsengine import generate_department_depart_excel_chart, generate_department_retard_excel_chart
-from pivotautomation import generate_department_employee_pivot_table
+from lib.chartsengine import generate_department_depart_excel_chart, generate_department_retard_excel_chart
+from lib.pivotautomation import generate_department_employee_pivot_table
 
 class FileEventHandler(FileSystemEventHandler):
     def __init__(self, folder_path, callback):
@@ -43,10 +43,15 @@ def csv_file_callback(file_path):
     #Replace 'input_file.csv' with the path to your input CSV file
     input_file = 'cleansed_out_file.csv'
     department_column='Department'
-    generate_report_by_department(input_file,department_column)
-    generate_report_by_department_employee(input_file,department_column)
-    generate_report_by_department_retard(input_file,department_column)
-    generate_report_by_department_depart(input_file,department_column)
-    
-
+    # generate_report_by_department(input_file,department_column)
+    # generate_report_by_department_employee(input_file,department_column)
+    # generate_report_by_department_retard(input_file,department_column)
+    # generate_report_by_department_depart(input_file,department_column)
+    generate_report_by_department_absent(input_file,department_column)
+    generate_report_by_department_absent_forperiod(input_file,department_column)
+    generate_report_by_department_byemployee_retard(input_file,department_column)
+    generate_report_by_department_forperiod_retard(input_file,department_column)
+    generate_report_by_department_forperiod_depart(input_file,department_column)
+    generate_report_by_department_byemployee_depart(input_file,department_column)
+    generate_final_report(input_file,department_column)
 
